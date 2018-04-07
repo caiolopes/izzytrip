@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "keycode": "^2.2.0",
+    "material-ui": "^1.0.0-beta.41",
+    "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
-    "react-scripts": "1.1.4"
+    "react-event-listener": "^0.5.3",
+    "react-scripts": "1.1.4",
+    "recompose": "^0.26.0"
   },
   "scripts": {
     "start": "react-scripts start",
