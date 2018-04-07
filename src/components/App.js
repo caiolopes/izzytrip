@@ -1,9 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Maps from "./Maps";
 
 class App extends Component {
   render() {
     return (
-      <div></div>
+      <div>
+        <Maps />
+      </div>
     );
   }
 }
