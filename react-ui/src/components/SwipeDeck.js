@@ -1,27 +1,7 @@
 import React, { Component } from "react";
 import Cards, { Card } from "react-swipe-card";
+import * as api from '../api';
 import "./styles.css";
-
-const data = [
-  {
-    name: "Taberna",
-    local: "Av. ",
-    img:
-      "https://img3.ibxk.com.br/2017/10/20/20152659110210.jpg?w=480&h=280&mode=crop"
-  },
-  {
-    name: "Bar",
-    local: "Rua do ",
-    img:
-      "https://img3.ibxk.com.br/2017/10/20/20152659110210.jpg?w=480&h=280&mode=crop"
-  },
-  {
-    name: "Cachoeirra",
-    local: "Deserto",
-    img:
-      "https://img3.ibxk.com.br/2017/10/20/20152659110210.jpg?w=480&h=280&mode=crop"
-  }
-];
 
 class SwipeDeck extends Component {
   state = {
@@ -29,21 +9,25 @@ class SwipeDeck extends Component {
   };
 
   componentDidMount() {
-    // Call API to fetch the data
-    const data = data.map((item, index) => {
-      return {
-        ...item,
-        backgroundImage: `url(${item.img})`
-      };
+    api.getPlaces('').then(res => {
+      const data = res.data.map((place, index) => {
+        console.log(place.image);
+        if (place.image) {
+          return {
+            ...place,
+            backgroundImage: `url(${place.image})`
+          };
+        }
+      });
+      this.setState({ data });
     });
-
-    this.setState({ data });
   }
 
   handleEnd = () => {};
 
   render() {
     const { data } = this.state;
+
     return (
       <div>
         <Cards onEnd={() => console.log("end")} className="master-root">
@@ -52,7 +36,7 @@ class SwipeDeck extends Component {
               onSwipeLeft={() => console.log("left")}
               onSwipeRight={() => console.log("right")}
               key={key}
-              style={item.backgroundImage}
+              style={{backgroundImage: item.backgroundImage}}
             >
               <div className="Title">
                 <h2>{item.name}</h2>
