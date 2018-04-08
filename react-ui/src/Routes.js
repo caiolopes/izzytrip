@@ -30,7 +30,7 @@ class Routes extends Component {
     const { classes } = this.props;
 
     return (
-      <React.Fragment>
+      <div>
         <CssBaseline />
         <Router>
           <div className={classes.root}>
@@ -52,7 +52,7 @@ class Routes extends Component {
             </Switch>
           </div>
         </Router>
-      </React.Fragment>
+      </div>
     );
   }
 }
