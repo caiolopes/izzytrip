@@ -49,9 +49,9 @@ function ItineraryListPage(props) {
       <GridList cellHeight={180} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
         {tileData.map(tile => (
-          <Link to={"/it"}>
+          //<Link to={"/it"}>
             <GridListTile key={tile.img}>
-              <img src={tile.img} alt={tile.title} />
+              <a href={"/it"} ><img src={tile.img} alt={tile.title} />
               <GridListTileBar
                 title={tile.title}
                 subtitle={<span>by: {tile.author}</span>}
@@ -61,8 +61,9 @@ function ItineraryListPage(props) {
                   </IconButton>
                 }
               />
+              </a>
             </GridListTile>
-          </Link>
+          //</Link>
         ))}
       </GridList>
     </div>
