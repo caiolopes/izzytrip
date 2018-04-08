@@ -22,7 +22,10 @@ const styles = {
   },
   button: {
     textDecoration: 'none',
-  }
+    border: 'none',
+    cursor: 'pointer',
+    overflow: 'hidden',  
+  },
 };
 
 class Routes extends Component {
