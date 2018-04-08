@@ -25,20 +25,25 @@ const data = [
 
 class SwipeDeck extends Component {
   state = {
-    data: null,
-    sytle: null
+    data: []
   };
 
   componentDidMount() {
-    // Call API
-    // styles = [];
-    // data.forEach((item, index) => {
-    //   style["background-image"] = item.img;
-    //   styles.push(style);
-    // });
+    // Call API to fetch the data
+    const data = data.map((item, index) => {
+      return {
+        ...item,
+        backgroundImage: `url(${item.img})`
+      };
+    });
+
+    this.setState({ data });
   }
 
+  handleEnd = () => {};
+
   render() {
+    const { data } = this.state;
     return (
       <div>
         <Cards onEnd={() => console.log("end")} className="master-root">
@@ -47,7 +52,7 @@ class SwipeDeck extends Component {
               onSwipeLeft={() => console.log("left")}
               onSwipeRight={() => console.log("right")}
               key={key}
-              // style={this.state.style[key]}
+              style={item.backgroundImage}
             >
               <div className="Title">
                 <h2>{item.name}</h2>
