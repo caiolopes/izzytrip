@@ -5,11 +5,10 @@ body {
 
 .split {
     height: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
+    position: absolute;
+    z-index: 0;
+    top: 65px;
     overflow-x: hidden;
-    padding-top: 65px;
 }
 
 .left {
@@ -21,7 +20,7 @@ body {
     float: right;
     width: 65%;
     right: 0;
-    position: fixed;
+    position: absolute;
 }
 
 .centered {
