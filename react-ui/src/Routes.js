@@ -37,7 +37,7 @@ class Routes extends Component {
         <CssBaseline />
         <Router>
           <div className={classes.root}>
-            <AppBar position="static" color="default">
+            <AppBar position="static" color="default" style={{marginBottom: 16}}>
               <Toolbar>
                 <Typography variant="title" color="inherit" className={classes.flex}>
                   IzzyTrip
