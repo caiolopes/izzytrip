@@ -1,27 +1,35 @@
 {
-  "name": "izzytrip",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "keycode": "^2.2.0",
-    "material-ui": "^1.0.0-beta.41",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.1",
-    "react-compose": "^2.0.0",
-    "react-dom": "^16.3.1",
-    "react-event-listener": "^0.5.3",
-    "react-google-maps": "^9.4.5",
-    "react-parallax": "^1.6.1",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.4",
-    "recompose": "^0.26.0"
+  "name": "izzy-trip-app",
+  "version": "1.0.0",
+  "description": "Izzy App",
+  "engines": {
+    "node": "8.9.x"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  }
+    "start": "node server",
+    "dev": "nodemon server",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "react-swipe-card": "^0.1.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mars/heroku-cra-node.git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "create-react-app",
+    "react"
+  ],
+  "license": "MIT"
 }

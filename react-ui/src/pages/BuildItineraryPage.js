@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
-import SearchPage from './SearchPage';
-import image from './beach.jpg';
+import SearchPage from "./SearchPage";
+import image from "./beach.jpg";
 
 class BuildItineraryPage extends Component {
   render() {
@@ -9,8 +9,9 @@ class BuildItineraryPage extends Component {
         <SearchPage
           headline="Organize sua viagem"
           buttonText="Criar"
-          pathname="build/it/new"
-          image={image} />
+          pathname="/build/it/new"
+          image={image}
+        />
       </Fragment>
     );
   }
