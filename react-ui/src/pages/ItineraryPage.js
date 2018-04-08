@@ -59,27 +59,21 @@ class Itinerary extends Component {
                 <div className="col-1">
                   <ul>
                     <li>
-                      <img
-                        className="icon"
-                        src="https://png.icons8.com/ios/50/000000/bank.png"
-                      />{" "}
+                      <img className="icon" src="https://png.icons8.com/ios/50/000000/bank.png"
+                      />
                       <b>Gasto total</b>: {this.state.data.data[0].budget}
                     </li>
                     <li>
-                      <img
-                        className="icon"
-                        src="https://png.icons8.com/ios/50/000000/home.png"
+                      <img className="icon" src="https://png.icons8.com/ios/50/000000/home.png"
                       />
                       <b>Acomodações</b>: Bacon
                     </li>
                     <li>
-                      <b>Duração</b>: {this.state.data.data[0].time}
+                      <img className="icon" src="https://png.icons8.com/ios/50/000000/clock.png"></img><b>Duração</b>: {this.state.data.data[0].time}
                     </li>
                     <li>
-                      <img
-                        className="icon"
-                        src="https://png.icons8.com/ios/50/000000/airport.png"
-                      />{" "}
+                      <img className="icon"  src="https://png.icons8.com/ios/50/000000/airport.png"
+                      />
                       <b>Transporte</b>: Bacon
                     </li>
                   </ul>
@@ -89,13 +83,12 @@ class Itinerary extends Component {
               <div className="user">
                 <h3>Contato</h3>
                 <div className="borda-user">
-                  <img
-                    className="img-user"
-                    src="https://png.icons8.com/ios/50/000000/contacts.png"
+                  <img className="img-user" src="https://png.icons8.com/ios/50/000000/contacts.png"
                   />
                   <p className="nome-user">
                     <b>Paulo Gandalf</b>
                   </p>
+                    
                   <p className="text-user">
                     Bacon ipsum dolor amet pancetta andouille sirloin, bacon
                     leberkas pork chop tri-tip prosciutto capicola cupim

@@ -70,14 +70,18 @@ body {
 
 .nome-user {
     float: right;
-    margin-left: 50px;
+    margin-right: 65%;
+    margin-top: 30px;
 }
 .img-user {
-    margin-right: 50px;
+    margin-top: 16px;
+    margin-left: 20px;
 }
 
 .text-user {
-    text-align: center;
+    margin-left: 50px;
+    text-align: justify;
+    width: 80%;
 } 
 
 ul {
