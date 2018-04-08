@@ -61,7 +61,7 @@ class Itinerary extends Component {
             <div className="content">
               <div>
                 <h2>{this.state.data.data[index].title}</h2>
-                <p>{this.state.data.data[index].places[index].hours.status} </p>
+                <p>{this.state.data.data[index].places[0].hours.status} </p>
                 <img src="https://png.icons8.com/ios/25/000000/facebook.png" />
                 <img src="https://png.icons8.com/wired/25/000000/facebook-like.png" />
                 {this.state.data.data[index].likes}
