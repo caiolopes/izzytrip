@@ -49,7 +49,7 @@ class ItineraryListPage extends Component {
 
   componentDidMount() {
     const city = this.props.match.params.city;
-    api.getPlaces(city).then(res => {
+    api.getIt(city).then(res => {
       this.setState({ data: res.data });
     });
   }
