@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import Maps from "../components/Maps.js";
 
@@ -11,10 +10,10 @@ class Itinerary extends Component {
         <div className="split left">
           <Maps
             center={{ lat: -23.5506396, lng: -46.5915389 }}
-          markers={[
-            { lat: -23.5506396, lng: -46.5915389 },
-            { lat: -23.5891025, lng: -46.6839002 }
-          ]}
+            markers={[
+              { lat: -23.5506396, lng: -46.5915389 },
+              { lat: -23.5891025, lng: -46.6839002 }
+            ]}
           />
         </div>
         <div className="split right">
@@ -40,18 +39,30 @@ class Itinerary extends Component {
                 ball tip kielbasa.
               </p>
             </div>
-            <div className="line"></div>
+            <div className="line" />
             <div className="col">
-              <div className="col-1"> 
+              <div className="col-1">
                 <ul>
-                  <li>  
-                    <img className="icon" src="https://png.icons8.com/ios/50/000000/bank.png"></img> <b>Gasto total</b>:  R$ 3.000
+                  <li>
+                    <img
+                      className="icon"
+                      src="https://png.icons8.com/ios/50/000000/bank.png"
+                    />{" "}
+                    <b>Gasto total</b>: R$ 3.000
                   </li>
                   <li>
-                    <img className="icon" src="https://png.icons8.com/ios/50/000000/home.png"></img>   <b>Acomodações</b>:  Bacon
+                    <img
+                      className="icon"
+                      src="https://png.icons8.com/ios/50/000000/home.png"
+                    />{" "}
+                    <b>Acomodações</b>: Bacon
                   </li>
                   <li>
-                    <img className="icon" src="https://png.icons8.com/ios/50/000000/airport.png"></img>   <b>Transporte</b>:  Bacon
+                    <img
+                      className="icon"
+                      src="https://png.icons8.com/ios/50/000000/airport.png"
+                    />{" "}
+                    <b>Transporte</b>: Bacon
                   </li>
                 </ul>  
               </div>  
