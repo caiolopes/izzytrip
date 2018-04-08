@@ -58,6 +58,7 @@ body {
 
 .user {
     margin-top: 10px;
+    margin-bottom: 40px;
     
 }
 
@@ -70,7 +71,7 @@ body {
 
 .nome-user {
     float: right;
-    margin-right: 65%;
+    margin-right: 80%;
     margin-top: 30px;
 }
 .img-user {
@@ -79,8 +80,8 @@ body {
 }
 
 .text-user {
-    margin-left: 50px;
-    text-align: justify;
+    margin-left: 10%;
+    text-align: center;
     width: 80%;
 } 
 

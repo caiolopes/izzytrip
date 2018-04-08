@@ -66,7 +66,7 @@ class Itinerary extends Component {
                     <li>
                       <img className="icon" src="https://png.icons8.com/ios/50/000000/home.png"
                       />
-                      <b>Acomodações</b>: Bacon
+                      <b>Acomodações</b>: Hostel
                     </li>
                     <li>
                       <img className="icon" src="https://png.icons8.com/ios/50/000000/clock.png"></img><b>Duração</b>: {this.state.data.data[0].time}
@@ -74,7 +74,7 @@ class Itinerary extends Component {
                     <li>
                       <img className="icon"  src="https://png.icons8.com/ios/50/000000/airport.png"
                       />
-                      <b>Transporte</b>: Bacon
+                      <b>Transporte</b>: Carro
                     </li>
                   </ul>
                 </div>
