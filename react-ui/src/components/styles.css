@@ -1,9 +1,9 @@
 .master-root {
   margin: 20px auto;
   position: relative;
-  min-height: 500px;
-  max-height: 500px;
-  width: 500px;
+  min-height: 700px;
+  max-height: 700px;
+  width: 700px;
   overflow: hidden;
   border: 1px solid #e5e5e5;
 }
@@ -76,9 +76,16 @@
   margin-left: 50%;
  }
 
- .Title {
-  background-color: black;
-  opacity: 0.6;
-  bottom: 0px;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+ .place-image {
+   position: relative;
  }
+
+ .overlay-title {
+  background-color: black;
+  opacity: 0.7;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  padding: 8px;
+  width: 100%;
+}
