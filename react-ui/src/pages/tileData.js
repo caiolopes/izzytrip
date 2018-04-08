@@ -4,24 +4,28 @@ import tirolesa from './tirolesa.jpg'
 
 const tileData = [
   {
-    img: cachoeira,
-    title: 'Cachoeira',
-    author: 'jill111',
+    image: cachoeira,
+    location: 'Brotas',
+    name: 'Cachoeira',
+    id: '1'
   },
   {
-    img: rafting,
-    title: 'Rafting',
-    author: 'director90',
+    image: rafting,
+    location: 'Brotas',
+    name: 'Rafting',
+    id: '2',
   },
   {
-    img: tirolesa,
-    title: 'Tirolesa',
-    author: 'Danson67',
+    image: tirolesa,
+    location: 'Brotas',
+    name: 'Tirolesa',
+    id: '3',
   },
   {
-    img: cachoeira,
-    title: 'Cachoeira',
-    author: 'jill111',
+    image: cachoeira,
+    location: 'Brotas',
+    name: 'Cachoeira',
+    id: '4',
   },
 ];
 
