@@ -62,24 +62,25 @@ class ItineraryListPage extends Component {
       <div className={classes.root}>
         <GridList cellHeight={300} className={classes.gridList}>
           <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
-          {data.map((item, key) => (
-            //<Link to={"/it/"}>
-            <GridListTile key={item.image}>
-              <a href={`/it/${key}`}>
-                <img src={item.image} alt={item.image} />
-                <GridListTileBar
-                  title={item.location.city}
-                  subtitle={<span>{item.name}</span>}
-                  actionIcon={
-                    <IconButton className={classes.icon}>
-                      <Icon>info</Icon>
-                    </IconButton>
-                  }
-                />
-              </a>
-            </GridListTile>
-            //</Link>
-          ))}
+          {data.map((item, key) => {
+            const place = item.places[0];
+            return (
+              <GridListTile key={place.image}>
+                <a href={`/it/${key}`}>
+                  <img src={place.image} />
+                  <GridListTileBar
+                    title={place.location.city}
+                    subtitle={<span>{place.name}</span>}
+                    actionIcon={
+                      <IconButton className={classes.icon}>
+                        <Icon>info</Icon>
+                      </IconButton>
+                    }
+                  />
+                </a>
+              </GridListTile>
+            );
+          })}
         </GridList>
       </div>
     );
