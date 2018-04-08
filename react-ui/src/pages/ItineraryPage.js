@@ -8,14 +8,18 @@ import "./ItineraryPage.css";
 class Itinerary extends Component {
   state = {
     data: null,
-    markers: null
+    markers: null,
+    index: 0
   };
 
   componentDidMount = () => {
+    const index = this.props.match.params.id ? this.props.match.params.id : 0;
+    this.setState({ index });
+
     api.getIt().then(res => {
       this.setState({ data: res });
 
-      let loc = res.data[0].places.map(place => {
+      let loc = res.data[index].places.map(place => {
         return {
           lat: place.location.lat,
           lng: place.location.lng,
@@ -26,10 +30,13 @@ class Itinerary extends Component {
       });
 
       this.setState({ markers: loc });
+      // }
     });
   };
 
   render() {
+    const { index } = this.state;
+
     if (this.state.data) {
       // console.log(this.state.data.data[0].likes);
 
@@ -53,15 +60,15 @@ class Itinerary extends Component {
             </div>
             <div className="content">
               <div>
-                <h2>{this.state.data.data[0].title}</h2>
-                <p>{this.state.data.data[0].places[0].hours.status} </p>
+                <h2>{this.state.data.data[index].title}</h2>
+                <p>{this.state.data.data[index].places[index].hours.status} </p>
                 <img src="https://png.icons8.com/ios/25/000000/facebook.png" />
                 <img src="https://png.icons8.com/wired/25/000000/facebook-like.png" />
-                {this.state.data.data[0].likes}
+                {this.state.data.data[index].likes}
                 <div className="line" />
               </div>
               <div>
-                <p>{this.state.data.data[0].description}</p>
+                <p>{this.state.data.data[index].description}</p>
               </div>
               <div className="line" />
               <h3>Principais pontos</h3>
@@ -73,7 +80,7 @@ class Itinerary extends Component {
                         className="icon"
                         src="https://png.icons8.com/ios/50/000000/bank.png"
                       />
-                      <b>Gasto total</b>: {this.state.data.data[0].budget}
+                      <b>Gasto total</b>: {this.state.data.data[index].budget}
                     </li>
                     <li>
                       <img
@@ -87,7 +94,7 @@ class Itinerary extends Component {
                         className="icon"
                         src="https://png.icons8.com/ios/50/000000/clock.png"
                       />
-                      <b>Duração</b>: {this.state.data.data[0].time}
+                      <b>Duração</b>: {this.state.data.data[index].time}
                     </li>
                     <li>
                       <img
