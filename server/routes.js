@@ -24,7 +24,7 @@ api.get('/', (req, res) => {
 });
 
 api.get('/clear', (req, res) => {
-  fs.writeFile(itFile, '[]', 'utf8', () => {
+  fs.writeFile(itFile, '{}', 'utf8', () => {
     res.send({ sucess: true });
   });
 });
@@ -36,7 +36,7 @@ api.post('/it', (req, res) => {
       res.send({ sucess: false });
     } else {
       const obj = JSON.parse(data); // now it an object
-      obj.push(req.body); // add some data
+      obj.data.push(req.body); // add some data
       const json = JSON.stringify(obj); // convert it back to json
       fs.writeFile(itFile, json, 'utf8', () => {
         res.send({ sucess: true });
