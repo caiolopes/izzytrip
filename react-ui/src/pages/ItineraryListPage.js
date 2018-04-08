@@ -63,9 +63,9 @@ class ItineraryListPage extends Component {
         <GridList cellHeight={300} className={classes.gridList}>
           <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
           {data.map((item, key) => (
-            //<Link to={"/it"}>
+            //<Link to={"/it/"}>
             <GridListTile key={item.image}>
-              <a href={"/it"}>
+              <a href={`/it/${key}`}>
                 <img src={item.image} alt={item.image} />
                 <GridListTileBar
                   title={item.location.city}

@@ -46,7 +46,7 @@ class Routes extends Component {
             <Switch>
               <Route exact path="/" component={SearchPage} />
               <Route exact path="/list/it/:city" component={ItineraryList} />
-              <Route exact path="/it" component={Itinerary} />
+              <Route exact path="/it/:id" component={Itinerary} />
               <Route exact path="/build/it" component={BuildItinerary} />
               <Route exact path="/build/it/new/:city" component={BuildItineraryCity} />
             </Switch>
