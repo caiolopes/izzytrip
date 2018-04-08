@@ -8,7 +8,12 @@ class Itinerary extends Component {
     return (
       <div>
         <div className="split left">
-          <Maps />
+          <Maps
+            markers={[
+              { lat: -23.5506396, lng: -46.5915389 },
+              { lat: -23.5891025, lng: -46.6839002 }
+            ]}
+          />
         </div>
         <div className="split right">
           <div>

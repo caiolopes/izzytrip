@@ -17,15 +17,20 @@ const MyMapComponent = compose(
   }),
   withScriptjs,
   withGoogleMap
-)(props => (
-  <GoogleMap defaultZoom={9} defaultCenter={{ lat: -23.533, lng: -46.625 }}>
-    <Marker position={{ lat: -23.533, lng: -46.625 }} />
-  </GoogleMap>
-));
+)(props => {
+  console.log("oi");
+  return (
+    <GoogleMap defaultZoom={9} defaultCenter={{ lat: -23.533, lng: -46.625 }}>
+      {props.markers.map(marker => {
+        return <Marker position={{ lat: marker.lat, lng: marker.lng }} />;
+      })}
+    </GoogleMap>
+  );
+});
 
 class Maps extends Component {
   render() {
-    return <MyMapComponent key="map" />;
+    return <MyMapComponent key="map" {...this.props} />;
   }
 }
 
