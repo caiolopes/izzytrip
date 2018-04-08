@@ -3,7 +3,7 @@ import Tinder from "../components/Tinder.js";
 
 class BuildItineraryCityPage extends Component {
   render() {
-    return <div> oi </div>;
+    return <Tinder />;
   }
 }
 

@@ -40,7 +40,33 @@ class Itinerary extends Component {
               </p>
             </div>
             <div className="line" />
-            <div className="info"> 200 reais, 4 horas</div>
+            <div className="col">
+              <div className="col-1">
+                <ul>
+                  <li>
+                    <img
+                      className="icon"
+                      src="https://png.icons8.com/ios/50/000000/bank.png"
+                    />{" "}
+                    <b>Gasto total</b>: R$ 3.000
+                  </li>
+                  <li>
+                    <img
+                      className="icon"
+                      src="https://png.icons8.com/ios/50/000000/home.png"
+                    />{" "}
+                    <b>Acomodações</b>: Bacon
+                  </li>
+                  <li>
+                    <img
+                      className="icon"
+                      src="https://png.icons8.com/ios/50/000000/airport.png"
+                    />{" "}
+                    <b>Transporte</b>: Bacon
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div className="line" />
             <div className="user"> User </div>
           </div>
