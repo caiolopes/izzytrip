@@ -42,12 +42,14 @@ class Itinerary extends Component {
               <img
                 className="image_preview"
                 src="http://alaya.com.br/wp-content/uploads/2014/11/nascente-areia-que-canta-brotas.jpg"
-                alt="sei la"
+                alt="Brotas"
               />
             </div>
             <div className="content">
               <div>
                 <h2>{this.state.data.data[0].title}</h2>
+                <img src="https://png.icons8.com/ios/25/000000/facebook.png"></img>
+                <img src="https://png.icons8.com/wired/25/000000/facebook-like.png"></img>
                 <div className="line" />
               </div>
               <div>
