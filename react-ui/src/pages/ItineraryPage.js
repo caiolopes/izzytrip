@@ -40,6 +40,7 @@ class Itinerary extends Component {
               </p>
             </div>
             <div className="line" />
+            <h3>Principais pontos</h3>
             <div className="col">
               <div className="col-1">
                 <ul>
@@ -69,8 +70,9 @@ class Itinerary extends Component {
             </div>  
             <div className="line"></div>
             <div className="user">
+            <h3>Contato</h3>
                 <div className="borda-user">
-                  <img className src="https://png.icons8.com/ios/50/000000/contacts.png"></img>
+                  <img className="img-user" src="https://png.icons8.com/ios/50/000000/contacts.png"></img>
                   <p className="nome-user"><b>Paulo Gandalf</b></p>
                 <p className="text-user">Bacon ipsum dolor amet pancetta andouille sirloin, bacon
               leberkas pork chop tri-tip prosciutto capicola cupim drumstick
