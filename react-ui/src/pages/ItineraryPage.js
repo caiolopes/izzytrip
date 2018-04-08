@@ -31,7 +31,7 @@ class Itinerary extends Component {
 
   render() {
     if (this.state.data) {
-      // console.log(this.state.data.data[0].places[0].url);
+      // console.log(this.state.data.data[0].likes);
 
       return (
         <div>
@@ -57,6 +57,7 @@ class Itinerary extends Component {
                 <p>{this.state.data.data[0].places[0].hours.status} </p>
                 <img src="https://png.icons8.com/ios/25/000000/facebook.png" />
                 <img src="https://png.icons8.com/wired/25/000000/facebook-like.png" />
+                {this.state.data.data[0].likes}
                 <div className="line" />
               </div>
               <div>
