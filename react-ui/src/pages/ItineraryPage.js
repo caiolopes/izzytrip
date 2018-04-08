@@ -120,9 +120,7 @@ class Itinerary extends Component {
                   </p>
 
                   <p className="text-user">
-                    Bacon ipsum dolor amet pancetta andouille sirloin, bacon
-                    leberkas pork chop tri-tip prosciutto capicola cupim
-                    drumstick fatback pastrami
+                    Viaja pelo Brasil ha 10 anos, e gosta muito do ar livre.
                   </p>
                 </div>
               </div>
