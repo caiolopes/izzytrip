@@ -51,16 +51,14 @@ class ItineraryListPage extends Component {
 
   componentDidMount() {
     api.getPlaces('').then(res => {
-      this.setState({ data: res.data });
+      this.setState({ data: res.data});
     });
   }
 
 
   render() {
-
   const { classes } = this.props;
   const { data } = this.state;
-
 
   return (
 
@@ -72,7 +70,7 @@ class ItineraryListPage extends Component {
             <GridListTile key={item.image}>
               <a href={"/it"} ><img src={item.image} alt={item.image} />
               <GridListTileBar
-                title={item.image}
+                title={item.location.city}
                 subtitle={<span>{item.name}</span>}
                 actionIcon={
                   <IconButton className={classes.icon}>
