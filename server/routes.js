@@ -19,6 +19,34 @@ var foursquareApi = axios.create({
   }
 });
 
+String.prototype.levenstein = function(string) {
+  var a = this,
+    b = string + '',
+    m = [],
+    i,
+    j,
+    min = Math.min;
+
+  if (!(a && b)) return (b || a).length;
+
+  for (i = 0; i <= b.length; m[i] = [i++]);
+  for (j = 0; j <= a.length; m[0][j] = j++);
+
+  for (i = 1; i <= b.length; i++) {
+    for (j = 1; j <= a.length; j++) {
+      m[i][j] =
+        b.charAt(i - 1) === a.charAt(j - 1)
+          ? m[i - 1][j - 1]
+          : (m[i][j] = min(
+              m[i - 1][j - 1] + 1,
+              min(m[i][j - 1] + 1, m[i - 1][j])
+            ));
+    }
+  }
+
+  return m[b.length][a.length];
+};
+
 api.get('/', (req, res) => {
   res.send({ message: 'Izzy Trip API' });
 });
@@ -46,15 +74,28 @@ api.post('/it', (req, res) => {
 });
 
 api.get('/it', (req, res) => {
-  fs.readFile(itFile, 'utf8', function readFileCallback(err, data) {
-    if (err) {
-      console.log(err);
-      res.send({ sucess: false });
-    } else {
-      const obj = JSON.parse(data);
-      res.send(obj);
-    }
-  });
+  const city = req.query.city || '';
+
+  if (city) {
+    fs.readFile(itFile, 'utf8', function readFileCallback(err, data) {
+      if (err) {
+        console.log(err);
+        res.send({ sucess: false });
+      } else {
+        const its = JSON.parse(data);
+
+        const response = its.data.filter(it => {
+          if (it.geocode.where.levenstein(city.toLowerCase()) <= 2) {
+            return it;
+          }
+        });
+
+        res.send({ data: response });
+      }
+    });
+  } else {
+    res.send({ success: false, message: 'Missing city query string' });
+  }
 });
 
 api.get('/places', async (req, res) => {

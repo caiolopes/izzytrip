@@ -119,7 +119,7 @@ class SearchPage extends Component {
             </div>
           </div>
         </Parallax>
-        <div align="center" className={classes.container}>
+        <div className={classes.container} style={{marginLeft: 24}}>
           <div className={classes.coisas1}>
             <img className={classes.fotos} src="https://abrilexame.files.wordpress.com/2018/03/rio-de-janeiro.jpg"></img>
             <p>Rio de Janeiro</p>
