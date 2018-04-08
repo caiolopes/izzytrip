@@ -7,7 +7,6 @@ import Icon from "material-ui/Icon";
 import tileData from "./tileData";
 import * as api from "../api";
 
-
 const styles = theme => ({
   root: {
     display: "flex",
@@ -48,44 +47,43 @@ class ItineraryListPage extends Component {
     data: []
   };
 
-
   componentDidMount() {
-    api.getPlaces('').then(res => {
-      this.setState({ data: res.data});
+    const city = this.props.match.params.city;
+    api.getPlaces(city).then(res => {
+      this.setState({ data: res.data });
     });
   }
 
-
   render() {
-  const { classes } = this.props;
-  const { data } = this.state;
+    const { classes } = this.props;
+    const { data } = this.state;
 
-  return (
-
-    <div className={classes.root}>
-      <GridList cellHeight={300} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
-        {data.map((item, key) => (
-          //<Link to={"/it"}>
+    return (
+      <div className={classes.root}>
+        <GridList cellHeight={300} className={classes.gridList}>
+          <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
+          {data.map((item, key) => (
+            //<Link to={"/it"}>
             <GridListTile key={item.image}>
-              <a href={"/it"} ><img src={item.image} alt={item.image} />
-              <GridListTileBar
-                title={item.location.city}
-                subtitle={<span>{item.name}</span>}
-                actionIcon={
-                  <IconButton className={classes.icon}>
-                    <Icon>info</Icon>
-                  </IconButton>
-                }
-              />
+              <a href={"/it"}>
+                <img src={item.image} alt={item.image} />
+                <GridListTileBar
+                  title={item.location.city}
+                  subtitle={<span>{item.name}</span>}
+                  actionIcon={
+                    <IconButton className={classes.icon}>
+                      <Icon>info</Icon>
+                    </IconButton>
+                  }
+                />
               </a>
             </GridListTile>
-          //</Link>
-        ))}
-      </GridList>
-    </div>
-  );
-}
+            //</Link>
+          ))}
+        </GridList>
+      </div>
+    );
+  }
 }
 
 ItineraryListPage.propTypes = {
