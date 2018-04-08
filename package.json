@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.3",
     "keycode": "^2.2.0",
     "material-ui": "^1.0.0-beta.41",
+    "nodemon": "^1.17.3",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-compose": "^2.0.0",
@@ -19,7 +21,9 @@
     "recompose": "^0.26.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server/server.js",
+    "dev:backend": "nodemon server/server.js",
+    "front": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
