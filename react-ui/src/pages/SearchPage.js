@@ -56,6 +56,11 @@ const styles = theme => ({
   },
   coisas: {
     width: '33%',
+    marginTop: 30,
+  },
+  fotos: {
+    height: 210,
+    width: 350,
   },
 
 });
@@ -110,13 +115,14 @@ class SearchPage extends Component {
         </Parallax>
         <div align="center" className={classes.container}>
           <div className={classes.coisas}>
-            <img  src="https://www.4devs.com.br/4devs_gerador_imagem.php?acao=gerar_imagem&txt_largura=320&txt_altura=240&extensao=png&fundo_r=0.9888916015625&fundo_g=0.9888916015625&fundo_b=0.9663180261850357&texto_r=0&texto_g=0&texto_b=0&texto=Gerador%20Imagem%20%234Devs&tamanho_fonte=10"></img>
+            <img className={classes.fotos} src="https://abrilexame.files.wordpress.com/2018/03/rio-de-janeiro.jpg"></img>
+            <p>Brotas</p>
           </div>
           <div className={classes.coisas}>
-            <img  src="https://www.4devs.com.br/4devs_gerador_imagem.php?acao=gerar_imagem&txt_largura=320&txt_altura=240&extensao=png&fundo_r=0.9888916015625&fundo_g=0.9888916015625&fundo_b=0.9663180261850357&texto_r=0&texto_g=0&texto_b=0&texto=Gerador%20Imagem%20%234Devs&tamanho_fonte=10"></img>
+            <img className={classes.fotos} src="https://img.stpu.com.br/?img=https://s3.amazonaws.com/pu-mgr/default/a0RG000000jZEZ8MAO/599edd29e4b09522ea202d70.jpg&w=620&h=400"></img>
           </div>
           <div className={classes.coisas}>
-            <img src="https://www.4devs.com.br/4devs_gerador_imagem.php?acao=gerar_imagem&txt_largura=320&txt_altura=240&extensao=png&fundo_r=0.9888916015625&fundo_g=0.9888916015625&fundo_b=0.9663180261850357&texto_r=0&texto_g=0&texto_b=0&texto=Gerador%20Imagem%20%234Devs&tamanho_fonte=10"></img>
+            <img className={classes.fotos} src="https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/34201/show/igreja-de-sao-francisco-de-assis.jpg"></img>
           </div>
         </div>
       </div>
