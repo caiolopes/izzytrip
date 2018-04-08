@@ -39,9 +39,9 @@ class Itinerary extends Component {
             </div>
             <div>
               <p>
-                Bacon ipsum dolor amet pancetta andouille sirloin, bacon
+                .Bacon ipsum dolor amet pancetta andouille sirloin, bacon
                 leberkas pork chop tri-tip prosciutto capicola cupim drumstick
-                fatback pastrami. Cupim sirloin beef ribs andouille. Shoulder
+                fatback pastrami Cupim sirloin beef ribs andouille. Shoulder
                 porchetta turkey tenderloin beef, boudin kielbasa prosciutto
                 chicken pancetta ribeye buffalo. Hamburger kevin sausage picanha
                 ball tip kielbasa.
@@ -72,11 +72,19 @@ class Itinerary extends Component {
                     />{" "}
                     <b>Transporte</b>: Bacon
                   </li>
-                </ul>
-              </div>
+                </ul>  
+              </div>  
+            </div>  
+            <div className="line"></div>
+            <div className="user">
+                <div className="borda-user">
+                  <img className src="https://png.icons8.com/ios/50/000000/contacts.png"></img>
+                  <p className="nome-user"><b>Paulo Gandalf</b></p>
+                <p className="text-user">Bacon ipsum dolor amet pancetta andouille sirloin, bacon
+              leberkas pork chop tri-tip prosciutto capicola cupim drumstick
+                fatback pastrami</p>
+                </div>
             </div>
-            <div className="line" />
-            <div className="user"> User </div>
           </div>
         </div>
       </div>
