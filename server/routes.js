@@ -23,6 +23,12 @@ api.get('/', (req, res) => {
   res.send({ message: 'Izzy Trip API' });
 });
 
+api.get('/clear', (req, res) => {
+  fs.writeFile(itFile, '[]', 'utf8', () => {
+    res.send({ sucess: true });
+  });
+});
+
 api.post('/it', (req, res) => {
   fs.readFile(itFile, 'utf8', function readFileCallback(err, data) {
     if (err) {
