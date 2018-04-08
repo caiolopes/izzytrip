@@ -1,68 +1,27 @@
+import cachoeira from './cachoeira.jpg'
+import rafting from './rafting.jpg'
+import tirolesa from './tirolesa.jpg'
+
 const tileData = [
   {
-    img: 'https://material-ui-next.com/static/images/grid-list/breakfast.jpg',
-    title: 'Breakfast',
+    img: cachoeira,
+    title: 'Cachoeira',
     author: 'jill111',
-    cols: 2,
-    featured: true,
   },
   {
-    img: 'https://material-ui-next.com/static/images/grid-list/burgers.jpg',
-    title: 'Tasty burger',
+    img: rafting,
+    title: 'Rafting',
     author: 'director90',
   },
   {
-    img: 'https://material-ui-next.com/static/images/grid-list/camera.jpg',
-    title: 'Camera',
+    img: tirolesa,
+    title: 'Tirolesa',
     author: 'Danson67',
   },
   {
-    img: 'https://material-ui-next.com/static/images/grid-list/morning.jpg',
-    title: 'Morning',
-    author: 'fancycrave1',
-    featured: true,
-  },
-  {
-    img: 'https://material-ui-next.com/static/images/grid-list/hats.jpg',
-    title: 'Hats',
-    author: 'Hans',
-  },
-  {
-    img: 'https://material-ui-next.com/static/images/grid-list/honey.jpg',
-    title: 'Honey',
-    author: 'fancycravel',
-  },
-  {
-    img: 'https://material-ui-next.com/static/images/grid-list/vegetables.jpg',
-    title: 'Vegetables',
+    img: cachoeira,
+    title: 'Cachoeira',
     author: 'jill111',
-    cols: 2,
-  },
-  {
-    img: 'https://material-ui-next.com/static/images/grid-list/plant.jpg',
-    title: 'Water plant',
-    author: 'BkrmadtyaKarki',
-  },
-  {
-    img: 'https://material-ui-next.com/static/images/grid-list/mushroom.jpg',
-    title: 'Mushrooms',
-    author: 'PublicDomainPictures',
-  },
-  {
-    img: 'https://material-ui-next.com/static/images/grid-list/olive.jpg',
-    title: 'Olive oil',
-    author: 'congerdesign',
-  },
-  {
-    img: 'https://material-ui-next.com/static/images/grid-list/star.jpg',
-    title: 'Sea star',
-    cols: 2,
-    author: '821292',
-  },
-  {
-    img: 'https://material-ui-next.com/static/images/grid-list/bike.jpg',
-    title: 'Bike',
-    author: 'danfador',
   },
 ];
 
