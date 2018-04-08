@@ -48,7 +48,7 @@ api.get('/places', async (req, res) => {
               const photo = place.featuredPhotos.items[0];
               return {
                 ...place,
-                image: photo.prefix + '300x300' + photo.suffix
+                image: photo.prefix + '500x500' + photo.suffix
               };
             } else {
               return place;
