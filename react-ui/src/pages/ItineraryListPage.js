@@ -1,11 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import GridList, { GridListTile, GridListTileBar } from "material-ui/GridList";
 import IconButton from "material-ui/IconButton";
 import Icon from "material-ui/Icon";
 import tileData from "./tileData";
+import * as api from "../api";
+
 
 const styles = theme => ({
   root: {
@@ -16,7 +17,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper
   },
   gridList: {
-    width: 1200,
+    width: 1000,
     height: 640
   },
   icon: {
@@ -32,30 +33,48 @@ const styles = theme => ({
  *
  * const tileData = [
  *   {
- *     image: image,
- *     location: location,
- *     name: name,
- *     id : id
+ *     image: data[i].image,
+ *     location: geocode.displayString,
+ *     name: data[i].name,
+ *     id : data[i].id
  *   },
  *   {
  *     [etc...]
  *   },
  * ];
  */
-function ItineraryListPage(props) {
-  const { classes } = props;
+class ItineraryListPage extends Component {
+  state = {
+    data: []
+  };
+
+
+  componentDidMount() {
+    api.getPlaces('').then(res => {
+      this.setState({ data: res.data });
+    });
+  }
+
+
+  render() {
+
+  const { classes } = this.props;
+  const { data } = this.state;
+
 
   return (
+
+    val = 
     <div className={classes.root}>
       <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
-        {tileData.map(tile => (
+        {data.map((item, key) => (
           //<Link to={"/it"}>
-            <GridListTile key={tile.image}>
-              <a href={"/it"} ><img src={tile.image} alt={tile.location} />
+            <GridListTile key={item.image}>
+              <a href={"/it"} ><img src={item.image} alt={item.image} />
               <GridListTileBar
-                title={tile.location}
-                subtitle={<span>{tile.name}</span>}
+                title={item.image}
+                subtitle={<span>{item.name}</span>}
                 actionIcon={
                   <IconButton className={classes.icon}>
                     <Icon>info</Icon>
@@ -69,6 +88,7 @@ function ItineraryListPage(props) {
       </GridList>
     </div>
   );
+}
 }
 
 ItineraryListPage.propTypes = {
