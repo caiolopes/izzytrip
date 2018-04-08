@@ -116,7 +116,6 @@ class SearchPage extends Component {
         <div align="center" className={classes.container}>
           <div className={classes.coisas}>
             <img className={classes.fotos} src="https://abrilexame.files.wordpress.com/2018/03/rio-de-janeiro.jpg"></img>
-            <p>Brotas</p>
           </div>
           <div className={classes.coisas}>
             <img className={classes.fotos} src="https://img.stpu.com.br/?img=https://s3.amazonaws.com/pu-mgr/default/a0RG000000jZEZ8MAO/599edd29e4b09522ea202d70.jpg&w=620&h=400"></img>
