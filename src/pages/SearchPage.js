@@ -4,11 +4,20 @@ import { withStyles } from 'material-ui/styles';
 import Typography from 'material-ui/Typography';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
+import { Link } from "react-router-dom";
 
 const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+  },
+  layer: {
+    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
   },
   search: {
     height: 500,
@@ -41,42 +50,64 @@ const styles = theme => ({
   },
 });
 
-const image = "https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5297440765001_5280261645001-vs.jpg?pubId=5104226627001&videoId=5280261645001";
+const defaultImage = "https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5297440765001_5280261645001-vs.jpg?pubId=5104226627001&videoId=5280261645001";
+
 
 class SearchPage extends Component {
+  state = {
+    searchValue: '',
+  }
+
+  onChange = (e) => {
+    this.setState({ searchValue: e.target.value });
+  }
+
   render() {
-    const { classes } = this.props;
+    const { searchValue } = this.state;
+    const { classes, image, headline, buttonText, pathname } = this.props;
 
     return (
       <div>
         <Parallax bgImage={image} blur={{min: -1,max:3}}>
+          <div className={classes.layer}></div>
           <div className={classes.search}>
-            <Typography variant="display1">Aonde você quer ir?</Typography>
+            <Typography variant="display1">{headline}</Typography>
             <br />
             <div className={classes.container}>
-              <TextField
-                placeholder="Digite uma cidade aqui"
-                id="bootstrap-input"
-                InputProps={{
-                  disableUnderline: true,
-                  classes: {
-                    root: classes.textFieldRoot,
-                    input: classes.textFieldInput,
-                  },
-                }}
-                InputLabelProps={{
-                  shrink: true,
-                  className: classes.textFieldFormLabel,
-                }}
-                style={{marginRight: 10, width: '60vw'}}
-              />
-              <Button variant="raised" color="primary">Busque intinerários</Button>
+              <form onSubmit={(e) => e.preventDefault()}>
+                <TextField
+                  placeholder="Digite uma cidade aqui"
+                  id="bootstrap-input"
+                  value={searchValue}
+                  InputProps={{
+                    disableUnderline: true,
+                    classes: {
+                      root: classes.textFieldRoot,
+                      input: classes.textFieldInput,
+                    },
+                  }}
+                  InputLabelProps={{
+                    shrink: true,
+                    className: classes.textFieldFormLabel,
+                  }}
+                  style={{marginRight: 10, width: '60vw'}}
+                  onChange={this.onChange}
+                />
+                <Link to={{ pathname: `${pathname}/${searchValue}` }}><Button type="submit" variant="raised" color="primary">{buttonText}</Button></Link>
+              </form>
             </div>
           </div>
         </Parallax>
       </div>
     );
   }
+}
+
+SearchPage.defaultProps = {
+  image: defaultImage,
+  pathname: "/list/it",
+  headline: 'Aonde você quer ir?',
+  buttonText: 'Busque itinerários',
 }
 
 export default withStyles(styles)(SearchPage);
