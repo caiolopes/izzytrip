@@ -27,7 +27,13 @@ const MyMapComponent = compose(
       {props.markers.map((marker, index) => {
         return (
           <Marker position={{ lat: marker.lat, lng: marker.lng }} key={index}>
-            <InfoWindow>OI</InfoWindow>
+            <InfoWindow>
+              <div>
+                <b>{marker.name}</b>
+                <p>Telefone: {marker.phone}</p>
+                <p>Site: {marker.url}</p>
+              </div>
+            </InfoWindow>
           </Marker>
         );
       })}

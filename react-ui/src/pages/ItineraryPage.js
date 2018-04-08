@@ -16,7 +16,13 @@ class Itinerary extends Component {
       this.setState({ data: res });
 
       let loc = res.data[0].places.map(place => {
-        return { lat: place.location.lat, lng: place.location.lng };
+        return {
+          lat: place.location.lat,
+          lng: place.location.lng,
+          name: place.name,
+          phone: place.contact.phone,
+          url: place.url
+        };
       });
 
       this.setState({ markers: loc });
@@ -25,8 +31,8 @@ class Itinerary extends Component {
 
   render() {
     if (this.state.data) {
-      console.log(this.state.data.data[0]);
-      console.log(this.state.data.data[0].places[0].location);
+      // console.log(this.state.data.data[0].places[0].url);
+
       return (
         <div>
           <div className="split left">
@@ -48,8 +54,9 @@ class Itinerary extends Component {
             <div className="content">
               <div>
                 <h2>{this.state.data.data[0].title}</h2>
-                <img src="https://png.icons8.com/ios/25/000000/facebook.png"></img>
-                <img src="https://png.icons8.com/wired/25/000000/facebook-like.png"></img>
+                <p>{this.state.data.data[0].places[0].hours.status} </p>
+                <img src="https://png.icons8.com/ios/25/000000/facebook.png" />
+                <img src="https://png.icons8.com/wired/25/000000/facebook-like.png" />
                 <div className="line" />
               </div>
               <div>
@@ -61,20 +68,30 @@ class Itinerary extends Component {
                 <div className="col-1">
                   <ul>
                     <li>
-                      <img className="icon" src="https://png.icons8.com/ios/50/000000/bank.png"
+                      <img
+                        className="icon"
+                        src="https://png.icons8.com/ios/50/000000/bank.png"
                       />
                       <b>Gasto total</b>: {this.state.data.data[0].budget}
                     </li>
                     <li>
-                      <img className="icon" src="https://png.icons8.com/ios/50/000000/home.png"
+                      <img
+                        className="icon"
+                        src="https://png.icons8.com/ios/50/000000/home.png"
                       />
                       <b>Acomodações</b>: Hostel
                     </li>
                     <li>
-                      <img className="icon" src="https://png.icons8.com/ios/50/000000/clock.png"></img><b>Duração</b>: {this.state.data.data[0].time}
+                      <img
+                        className="icon"
+                        src="https://png.icons8.com/ios/50/000000/clock.png"
+                      />
+                      <b>Duração</b>: {this.state.data.data[0].time}
                     </li>
                     <li>
-                      <img className="icon"  src="https://png.icons8.com/ios/50/000000/airport.png"
+                      <img
+                        className="icon"
+                        src="https://png.icons8.com/ios/50/000000/airport.png"
                       />
                       <b>Transporte</b>: Carro
                     </li>
@@ -85,12 +102,14 @@ class Itinerary extends Component {
               <div className="user">
                 <h3>Contato</h3>
                 <div className="borda-user">
-                  <img className="img-user" src="https://png.icons8.com/ios/50/000000/contacts.png"
+                  <img
+                    className="img-user"
+                    src="https://png.icons8.com/ios/50/000000/contacts.png"
                   />
                   <p className="nome-user">
                     <b>Paulo Gandalf</b>
                   </p>
-                    
+
                   <p className="text-user">
                     Bacon ipsum dolor amet pancetta andouille sirloin, bacon
                     leberkas pork chop tri-tip prosciutto capicola cupim
