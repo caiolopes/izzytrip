@@ -23,9 +23,9 @@ export async function createItinerary(it) {
   }
 }
 
-export async function getIt() {
+export async function getIt(city) {
   try {
-    const response = await axios.get("/it");
+    const response = await axios.get(`/it?city=${city}`);
     return response.data;
   } catch (err) {
     console.err(err);

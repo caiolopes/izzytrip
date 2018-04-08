@@ -3,9 +3,10 @@ import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import Grid from 'material-ui/Grid';
 import Cards, { Card } from "react-swipe-card";
+import TextField from 'material-ui/TextField';
 import * as api from '../api';
-import "./styles.css";
 
+import "./styles.css";
 
 class SwipeDeck extends Component {
   constructor(props) {
@@ -102,7 +103,14 @@ class SwipeDeck extends Component {
   }
 
   createItinerary = (e) => {
-    api.createItinerary({geocode: this.response.geocode, places: this.liked}).then(res => {
+    const $ = window.$;
+
+    const title = $('#title')[0].value;
+    const budget = $('#budget')[0].value;
+    const description = $('#description')[0].value;
+    const time = $('#time')[0].value;
+
+    api.createItinerary({geocode: this.response.geocode, places: this.liked, title, budget, description, time }).then(res => {
       window.location = '/';
     });
   }
@@ -125,8 +133,38 @@ class SwipeDeck extends Component {
         <Grid item md={6}>
           <div id="place-info">
           </div>
+          <div>
+            <TextField
+              style={{margin: 16}}
+              id="title"
+              label="Title"
+              margin="normal"
+            />
+            <TextField
+              style={{margin: 16}}
+              id="description"
+              label="Description"
+              margin="normal"
+            />
+            <TextField
+              style={{margin: 16}}
+              id="budget"
+              label="Budget"
+              margin="normal"
+            />
+            <TextField
+              style={{margin: 16}}
+              id="time"
+              label="Time"
+              margin="normal"
+            />
+          </div>
         </Grid>
-        <div style={{right: 0, marginLeft: 100}}><Button variant="raised" color="primary" onClick={this.createItinerary}>Criar</Button></div>
+
+        <div style={{right: 0, marginLeft: 100}}>
+
+          <Button variant="raised" color="primary" onClick={this.createItinerary}>Criar</Button>
+        </div>
       </Grid>
     );
   }
