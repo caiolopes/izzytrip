@@ -33,7 +33,7 @@ if (cluster.isMaster) {
   // Priority serve any static files.
   app.use(cors());
   app.use(bodyParser.json());
-  app.use(routes);
+  app.use('/api', routes);
   app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
   // All remaining requests return the React app, so it can handle routing.
