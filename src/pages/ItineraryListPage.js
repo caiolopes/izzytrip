@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
-import Subheader from 'material-ui/List/ListSubheader';
 import IconButton from 'material-ui/IconButton';
 import Icon from 'material-ui/Icon';
 import tileData from './tileData';
@@ -16,7 +15,7 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 500,
+    width: 1200,
     height: 450,
   },
   icon: {
@@ -48,7 +47,6 @@ function ItineraryListPage(props) {
     <div className={classes.root}>
       <GridList cellHeight={180} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <Subheader component="div">December</Subheader>
         </GridListTile>
         {tileData.map(tile => (
           <GridListTile key={tile.img}>
