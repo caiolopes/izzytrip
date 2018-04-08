@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { withStyles } from "material-ui/styles";
 import GridList, { GridListTile, GridListTileBar } from "material-ui/GridList";
 import IconButton from "material-ui/IconButton";
+import Typography from "material-ui/Typography";
 import Icon from "material-ui/Icon";
 import tileData from "./tileData";
 import * as api from "../api";
@@ -48,7 +49,8 @@ class ItineraryListPage extends Component {
   };
 
   componentDidMount() {
-    const city = this.props.match.params.city;
+    const city = decodeURIComponent(this.props.match.params.city);
+    localStorage.setItem('city', city);
     api.getIt(city).then(res => {
       this.setState({ data: res.data });
     });
@@ -60,6 +62,11 @@ class ItineraryListPage extends Component {
 
     return (
       <div className={classes.root}>
+        {data.length === 0 ? (
+          <Typography variant="headline">Sem resultados disponíveis</Typography>
+        ) : (
+          <Typography variant="headline">Lista de itinerários disponíveis</Typography>
+        )}
         <GridList cellHeight={300} className={classes.gridList}>
           <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
           {data.map((item, key) => {

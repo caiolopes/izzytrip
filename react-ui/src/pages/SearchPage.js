@@ -57,6 +57,12 @@ const styles = theme => ({
   coisas: {
     width: '33%',
     marginTop: 30,
+    marginBottom: 30,    
+  },
+  coisas1: {
+    width: '34%',
+    marginTop: 30,
+    marginBottom: 30,
   },
   fotos: {
     height: 210,
@@ -113,15 +119,18 @@ class SearchPage extends Component {
             </div>
           </div>
         </Parallax>
-        <div align="center" className={classes.container}>
-          <div className={classes.coisas}>
+        <div className={classes.container} style={{marginLeft: 24}}>
+          <div className={classes.coisas1}>
             <img className={classes.fotos} src="https://abrilexame.files.wordpress.com/2018/03/rio-de-janeiro.jpg"></img>
+            <p>Rio de Janeiro</p>
           </div>
           <div className={classes.coisas}>
             <img className={classes.fotos} src="https://img.stpu.com.br/?img=https://s3.amazonaws.com/pu-mgr/default/a0RG000000jZEZ8MAO/599edd29e4b09522ea202d70.jpg&w=620&h=400"></img>
+            <p>Ubatuba</p>      
           </div>
           <div className={classes.coisas}>
             <img className={classes.fotos} src="https://spguia.melhoresdestinos.com.br/system/fotos_local/fotos/34201/show/igreja-de-sao-francisco-de-assis.jpg"></img>
+            <p>Ouro Preto</p>      
           </div>
         </div>
       </div>

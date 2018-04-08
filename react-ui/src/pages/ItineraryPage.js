@@ -16,7 +16,8 @@ class Itinerary extends Component {
     const index = this.props.match.params.id ? this.props.match.params.id : 0;
     this.setState({ index });
 
-    api.getIt().then(res => {
+    const city = localStorage.getItem('city');
+    api.getIt(city).then(res => {
       this.setState({ data: res });
 
       let loc = res.data[index].places.map(place => {
