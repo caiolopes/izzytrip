@@ -24,8 +24,10 @@ const MyMapComponent = compose(
       defaultZoom={11}
       defaultCenter={{ lat: props.center.lat, lng: props.center.lng }}
     >
-      {props.markers.map(marker => {
-        return <Marker position={{ lat: marker.lat, lng: marker.lng }} />;
+      {props.markers.map((marker, index) => {
+        return (
+          <Marker position={{ lat: marker.lat, lng: marker.lng }} key={index} />
+        );
       })}
     </GoogleMap>
   );
