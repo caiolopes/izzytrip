@@ -5,7 +5,7 @@ axios.defaults.baseURL =
 
 export async function getPlaces(city) {
   try {
-    const response = await axios.get('/places');
+    const response = await axios.get(`/places?city=${city}`);
 
     return response.data;
   } catch (err) {
