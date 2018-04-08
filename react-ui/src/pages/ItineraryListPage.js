@@ -1,26 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import GridList, { GridListTile, GridListTileBar } from 'material-ui/GridList';
-import IconButton from 'material-ui/IconButton';
-import Icon from 'material-ui/Icon';
-import tileData from './tileData';
+import React from "react";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+import { withStyles } from "material-ui/styles";
+import GridList, { GridListTile, GridListTileBar } from "material-ui/GridList";
+import IconButton from "material-ui/IconButton";
+import Icon from "material-ui/Icon";
+import tileData from "./tileData";
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    overflow: 'hidden',
-    backgroundColor: theme.palette.background.paper,
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    overflow: "hidden",
+    backgroundColor: theme.palette.background.paper
   },
   gridList: {
     width: 1200,
-    height: 450,
+    height: 450
   },
   icon: {
-    color: 'rgba(255, 255, 255, 0.54)',
-  },
+    color: "rgba(255, 255, 255, 0.54)"
+  }
 });
 
 /**
@@ -46,21 +47,22 @@ function ItineraryListPage(props) {
   return (
     <div className={classes.root}>
       <GridList cellHeight={180} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-        </GridListTile>
+        <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
         {tileData.map(tile => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
-              actionIcon={
-                <IconButton className={classes.icon}>
-                  <Icon>info</Icon>
-                </IconButton>
-              }
-            />
-          </GridListTile>
+          <Link to={"/it"}>
+            <GridListTile key={tile.img}>
+              <img src={tile.img} alt={tile.title} />
+              <GridListTileBar
+                title={tile.title}
+                subtitle={<span>by: {tile.author}</span>}
+                actionIcon={
+                  <IconButton className={classes.icon}>
+                    <Icon>info</Icon>
+                  </IconButton>
+                }
+              />
+            </GridListTile>
+          </Link>
         ))}
       </GridList>
     </div>
@@ -68,7 +70,7 @@ function ItineraryListPage(props) {
 }
 
 ItineraryListPage.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(ItineraryListPage);
