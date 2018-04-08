@@ -17,11 +17,10 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "react-swipe-card": "^0.1.4"
   },
-  "devDependencies": {
-    "nodemon": "^1.17.3"
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "https://github.com/mars/heroku-cra-node.git"
@@ -32,6 +31,5 @@
     "create-react-app",
     "react"
   ],
-  "license": "MIT",
-  "devDependencies": {}
+  "license": "MIT"
 }
