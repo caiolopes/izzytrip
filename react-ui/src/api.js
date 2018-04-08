@@ -5,7 +5,17 @@ axios.defaults.baseURL =
 
 export async function getPlaces(city) {
   try {
-    const response = await axios.get(`/places?city=${city}`);
+    const response = await axios.get(`/places?city=${encodeURIComponent(city)}`);
+
+    return response.data;
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+export async function createItinerary(it) {
+  try {
+    const response = await axios.post(`/it`, it);
 
     return response.data;
   } catch (err) {
