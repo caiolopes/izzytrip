@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import CssBaseline from 'material-ui/CssBaseline';
 import { withStyles } from 'material-ui/styles';
 import AppBar from 'material-ui/AppBar';
@@ -43,13 +43,13 @@ class Routes extends Component {
                 <Link to="/build/it" className={classes.button}><Button>Criar itinerário</Button></Link>
               </Toolbar>
             </AppBar>
-            <div>
+            <Switch>
               <Route exact path="/" component={SearchPage} />
               <Route exact path="/list/it/:city" component={ItineraryList} />
               <Route exact path="/it" component={Itinerary} />
               <Route exact path="/build/it" component={BuildItinerary} />
               <Route exact path="/build/it/new/:city" component={BuildItineraryCity} />
-            </div>
+            </Switch>
           </div>
         </Router>
       </React.Fragment>
