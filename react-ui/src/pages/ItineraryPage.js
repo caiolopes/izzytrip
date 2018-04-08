@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import Maps from "../components/Maps.js";
 
+import * as api from "../api";
+
 import "./ItineraryPage.css";
 
 class Itinerary extends Component {
+  componentDidMount = () => {
+    api.getIt().then(res => {
+      console.log(res);
+    });
+  };
+
   render() {
     return (
       <div>
