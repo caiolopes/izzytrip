@@ -64,7 +64,6 @@ class ItineraryListPage extends Component {
 
   return (
 
-    val = 
     <div className={classes.root}>
       <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
