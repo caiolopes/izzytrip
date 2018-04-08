@@ -72,7 +72,7 @@ class ItineraryListPage extends Component {
           {data.map((item, key) => {
             const place = item.places[0];
             return (
-              <GridListTile key={place.image}>
+              <GridListTile key={key}>
                 <a href={`/it/${key}`}>
                   <img src={place.image} />
                   <GridListTileBar
