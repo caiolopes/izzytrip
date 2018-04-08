@@ -21,11 +21,11 @@ body {
     float: right;
     width: 65%;
     right: 0;
-
+    position: fixed;
 }
 
 .centered {
-    position: relative;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -59,10 +59,30 @@ body {
 
 .user {
     margin-top: 10px;
+    
 }
+
+.borda-user {
+    border-width: 1px;
+    border-style: solid;
+    border-color:  #DBDBDB;
+    margin: 0px 100px 0px 100px;
+}
+
+.nome-user {
+    float: right;
+}
+
+.text-user {
+
+} 
 
 ul {
     list-style-type:none
+}
+
+li {
+    line-height: 50px;
 }
 
 .col {
@@ -81,4 +101,5 @@ ul {
 .icon {
     width: 25px;
     height: 25px;;
+    vertical-align: middle;
 }
