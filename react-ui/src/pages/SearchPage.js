@@ -7,6 +7,12 @@ import Button from 'material-ui/Button';
 import { Link } from "react-router-dom";
 
 const styles = theme => ({
+  button: {
+    textDecoration: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    overflow: 'hidden',  
+  },
   container: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -48,6 +54,7 @@ const styles = theme => ({
   textFieldFormLabel: {
     fontSize: 18,
   },
+
 });
 
 const defaultImage = "https://brightcove04pmdo-a.akamaihd.net/5104226627001/5104226627001_5297440765001_5280261645001-vs.jpg?pubId=5104226627001&videoId=5280261645001";
@@ -93,7 +100,7 @@ class SearchPage extends Component {
                   style={{marginRight: 10, width: '60vw'}}
                   onChange={this.onChange}
                 />
-                <Link to={{ pathname: `${pathname}/${searchValue}` }}><Button type="submit" variant="raised" color="primary">{buttonText}</Button></Link>
+                <Link to={{ pathname: `${pathname}/${searchValue}` }} className={classes.button}><Button type="submit" variant="raised" color="primary" >{buttonText}</Button></Link>
               </form>
             </div>
           </div>
