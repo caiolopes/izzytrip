@@ -4,7 +4,8 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Marker,
+  InfoWindow
 } from "react-google-maps";
 
 const MyMapComponent = compose(
@@ -18,7 +19,6 @@ const MyMapComponent = compose(
   withScriptjs,
   withGoogleMap
 )(props => {
-  console.log("oi");
   return (
     <GoogleMap
       defaultZoom={11}
@@ -26,7 +26,9 @@ const MyMapComponent = compose(
     >
       {props.markers.map((marker, index) => {
         return (
-          <Marker position={{ lat: marker.lat, lng: marker.lng }} key={index} />
+          <Marker position={{ lat: marker.lat, lng: marker.lng }} key={index}>
+            <InfoWindow>OI</InfoWindow>
+          </Marker>
         );
       })}
     </GoogleMap>
