@@ -16,7 +16,7 @@ const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-  },
+  },  
   layer: {
     backgroundColor: 'rgba(0, 0, 0, 0.2)',
     position: 'absolute',
@@ -53,6 +53,9 @@ const styles = theme => ({
   },
   textFieldFormLabel: {
     fontSize: 18,
+  },
+  coisas: {
+    width: '33%',
   },
 
 });
@@ -105,6 +108,17 @@ class SearchPage extends Component {
             </div>
           </div>
         </Parallax>
+        <div align="center" className={classes.container}>
+          <div className={classes.coisas}>
+            <img  src="https://www.4devs.com.br/4devs_gerador_imagem.php?acao=gerar_imagem&txt_largura=320&txt_altura=240&extensao=png&fundo_r=0.9888916015625&fundo_g=0.9888916015625&fundo_b=0.9663180261850357&texto_r=0&texto_g=0&texto_b=0&texto=Gerador%20Imagem%20%234Devs&tamanho_fonte=10"></img>
+          </div>
+          <div className={classes.coisas}>
+            <img  src="https://www.4devs.com.br/4devs_gerador_imagem.php?acao=gerar_imagem&txt_largura=320&txt_altura=240&extensao=png&fundo_r=0.9888916015625&fundo_g=0.9888916015625&fundo_b=0.9663180261850357&texto_r=0&texto_g=0&texto_b=0&texto=Gerador%20Imagem%20%234Devs&tamanho_fonte=10"></img>
+          </div>
+          <div className={classes.coisas}>
+            <img src="https://www.4devs.com.br/4devs_gerador_imagem.php?acao=gerar_imagem&txt_largura=320&txt_altura=240&extensao=png&fundo_r=0.9888916015625&fundo_g=0.9888916015625&fundo_b=0.9663180261850357&texto_r=0&texto_g=0&texto_b=0&texto=Gerador%20Imagem%20%234Devs&tamanho_fonte=10"></img>
+          </div>
+        </div>
       </div>
     );
   }

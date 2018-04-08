@@ -38,7 +38,7 @@ class Itinerary extends Component {
     const { index } = this.state;
 
     if (this.state.data) {
-      // console.log(this.state.data.data[0].likes);
+      console.log(this.state.data.data[0]);
 
       return (
         <div>
@@ -54,13 +54,14 @@ class Itinerary extends Component {
             <div>
               <img
                 className="image_preview"
-                src="http://alaya.com.br/wp-content/uploads/2014/11/nascente-areia-que-canta-brotas.jpg"
+                src={this.state.data.data[0].places[0].image}
                 alt="Brotas"
               />
             </div>
             <div className="content">
               <div>
                 <h2>{this.state.data.data[index].title}</h2>
+                <p>{this.state.data.data[index].places[0].hours.status} </p>
                 <img src="https://png.icons8.com/ios/25/000000/facebook.png" />
                 <img src="https://png.icons8.com/wired/25/000000/facebook-like.png" />
                 {this.state.data.data[index].likes}
