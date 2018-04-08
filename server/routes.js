@@ -1,5 +1,7 @@
 const express = require('express');
 const axios = require('axios');
+// const _ = require('lodash');
+const placesResJson = require('./places.json');
 
 var api = express.Router();
 
@@ -14,13 +16,16 @@ var foursquareApi = axios.create({
     v: '20180323'
   }
 });
-
 api.get('/', (req, res) => {
   res.send({ message: 'Izzy Trip API' });
 });
 
-api.get('/test', async (req, res) => {
+api.get('/places', async (req, res) => {
   const city = req.query.city;
+
+  res.send(placesResJson);
+
+  return;
 
   if (city) {
     try {
@@ -31,9 +36,36 @@ api.get('/test', async (req, res) => {
         }
       });
 
-      res.send(foursquareRes.data);
+      const data = foursquareRes.data.response;
+
+      if (data.groups.length > 0) {
+        const places = data.groups[0].items
+          .map(item => {
+            return item.venue;
+          })
+          .map(place => {
+            if (place.featuredPhotos.items.length > 0) {
+              const photo = place.featuredPhotos.items[0];
+              return {
+                ...place,
+                image: photo.prefix + '300x300' + photo.suffix
+              };
+            } else {
+              return place;
+            }
+          });
+
+        const customData = {
+          geocode: data.geocode,
+          data: places
+        };
+
+        res.send(customData);
+      } else {
+        res.send('Empty');
+      }
     } catch (err) {
-      // console.error(err);
+      console.log(err);
       res.send('Error');
     }
   } else {
