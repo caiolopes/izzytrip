@@ -70,7 +70,7 @@ class ItineraryListPage extends Component {
                   <img src={place.image} />
                   <GridListTileBar
                     title={place.location.city}
-                    subtitle={<span>{place.name}</span>}
+                    subtitle={<span><Icon className={classes.icon}>attach_money</Icon>{place.budget} <Icon className={classes.icon}>access_time</Icon>{place.time}</span>}
                     actionIcon={
                       <IconButton className={classes.icon}>
                         <Icon>info</Icon>
