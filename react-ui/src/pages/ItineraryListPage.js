@@ -17,7 +17,7 @@ const styles = theme => ({
   },
   gridList: {
     width: 1200,
-    height: 450
+    height: 640
   },
   icon: {
     color: "rgba(255, 255, 255, 0.54)"
@@ -32,9 +32,10 @@ const styles = theme => ({
  *
  * const tileData = [
  *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
+ *     image: image,
+ *     location: location,
+ *     name: name,
+ *     id : id
  *   },
  *   {
  *     [etc...]
@@ -46,15 +47,15 @@ function ItineraryListPage(props) {
 
   return (
     <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
+      <GridList cellHeight={300} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: "auto" }} />
         {tileData.map(tile => (
           //<Link to={"/it"}>
-            <GridListTile key={tile.img}>
-              <a href={"/it"} ><img src={tile.img} alt={tile.title} />
+            <GridListTile key={tile.image}>
+              <a href={"/it"} ><img src={tile.image} alt={tile.location} />
               <GridListTileBar
-                title={tile.title}
-                subtitle={<span>by: {tile.author}</span>}
+                title={tile.location}
+                subtitle={<span>{tile.name}</span>}
                 actionIcon={
                   <IconButton className={classes.icon}>
                     <Icon>info</Icon>
