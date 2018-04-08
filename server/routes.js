@@ -5,7 +5,6 @@ const axios = require('axios');
 // const _ = require('lodash');
 
 const itFile = path.join(__dirname, '/itineraries.json');
-
 var api = express.Router();
 
 const CLIENT_ID = process.env.FOURSQUARE_CLIENT_ID;
@@ -47,7 +46,6 @@ api.get('/it', (req, res) => {
       res.send({ sucess: false });
     } else {
       const obj = JSON.parse(data);
-
       res.send(obj);
     }
   });

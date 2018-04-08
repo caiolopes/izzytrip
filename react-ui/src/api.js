@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from "axios";
 
 axios.defaults.baseURL =
-  process.env.REACT_APP_API_URL || 'http://izzytrip.herokuapp.com/api/';
+  process.env.REACT_APP_API_URL || "http://izzytrip.herokuapp.com/api/";
 
 export async function getPlaces(city) {
   try {
@@ -19,6 +19,15 @@ export async function createItinerary(it) {
 
     return response.data;
   } catch (err) {
-    console.error(err)
+    console.error(err);
+  }
+}
+
+export async function getIt() {
+  try {
+    const response = await axios.get("/it");
+    return response.data;
+  } catch (err) {
+    console.err(err);
   }
 }
